@@ -1,0 +1,46 @@
+Git notes continue
+*INIT CAMMAND:
+-git intit: used to create new git repo(used to initialize git in a new project)
+
+-git remote add origin <link>: 
+~This command is used to add the link of your repository from where you want to pull code
+and also push your local changes. You need to replace `<link>` with the URL of your GitHub
+repository. 
+For example, if your GitHub username is `yourusername` and the name of your repository
+is `YourRepo`, then use this command as follows: `git remote add origin https://
+github.com/yourusername/YourRepo.git`.
+
+-git remote -v:
+~This command is used to view all the remotes along with their respective links. It shows
+the shortname or alias for each remote followed by its linked URL. If you have added more than
+one remote using the above mentioned command, this will show them all.
+
+-git fetch [remote-name]:
+~The ‘fetch’ command is used to download objects and refs from another repository. But it
+doesn’t integrate these into your working file structure. So, if you just want to see
+what’s in the other repository without integrating anything into your current work, use
+this command. Replace `[remote-name]` with the shortname of the remote (you got from
+`git remote -v`). For example, if your remote's shortname is `origin`,use `git fetch origin`.
+
+-git branch:
+~This command is used to list out all the branches that are currently available in your
+local repository. The asterisk (*) indicates the currently active (or checked-out) branch
+in your local repository.
+
+-git checkout [branch-name]:
+~This command is used to switch from one branch to another. Use this command to select
+which branch you would like to work on. Replace `[branch-name]` with the name of the
+branch you wish to check out. 
+For example, if you want to switch to the `master`
+branch, type `git checkout master`.
+
+-git branch -M main:
+~This command is used to rename the current branch to whatever you specify after `-M`.
+In our case we renamed the current branch (`main`) to `mainline`. This means now when
+we type `git branch`, `mainline` will appear instead of `main`.
+
+-git push origin main:
+~After renaming the branch, we need to push the changes made in our local repository
+to the remote repository so that they can be visible there too. We do this using the
+`push` command followed by the `origin`(shortname of remote repo), then the old
+branch-name(`main`), colon(:), and finally the new branch-name(`mainline`).

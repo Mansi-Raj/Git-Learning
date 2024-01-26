@@ -1,0 +1,73 @@
+#GIT
+~Configuring Git
+1. Open Terminal (Mac) or Git Bash (Windows).
+2. git config --global user.name"username of github account"
+3. git config --global user.email "email address associated with the Github Account".
+4. To check if it was configured correctly, use the command:
+- git config --list
+
+For repo(repository: folder which is created on the github account also known as remote repo):
+* CLONE:
+- cammand which is used to create a clone/copy of repo on our system by using cammand:
+git clone<link of the repo>
+
+*STATUS:
+-This command is used to know about the status of the files in the repository like :
+
+-Modified: The file has been modified after being pulled from the repository.
+
+-Staged: The changes have been added to the staging area so that they can be committed
+together as a single unit.
+ 
+-Unstaged: The changes have not yet been added to the staging area. They may
+have been modified after being pulled from the repository, or they may have
+been removed from the working directory since the last commit.
+
+-Unmodified: The unchanged files.
+USEFUL COMMANDS FOR STATUS ARE:
+-git status -s : This will give you list of all the changed files and their types.
+
+*ADDING FILES TO THE REPOSITORY:
+There are two ways to add files to the repository:
+1. Using 'add' command:
+* For adding new file :
+* git add <filename>
+* For adding all new files :
+* git add . (It will add all the new files in the current directory and its subdirect
+ories.)
+
+2. Using 'commit' command : While committing we need to add -a flag which
+automatically adds all the new files to the stage area.
+* git commit -m "<Message>"
+*COMMITTING CHANGES :
+If there are no changes then also we need to do some change so that we can
+commit those changes. We can make any small change like changing the readme file and doing a commit.
+
+*VIEWING LOG OF COMMITS :
+To see who made what changes and when:
+* git log
+OR
+* git log --oneline
+
+*CHECKOUT :
+The checkout command allows us to revert back to a previous version of anything in our project.
+We can use this command with following options:
+-git checkout HEAD~1  : It will take us one step backwards.
+-git checkout HEAD~2   : It will take us two steps backwards.
+
+*PUSH:
+When we push the changes to the remote repository using below commands:
+* git push origin main
+OR
+* git push origin master
+-origin: 
+This is just an alias for your remote repository’s name, it could be anything. You can set it by using :
+* git remote rename origin myfork
+OR
+You can remove the alias by using :
+* git remote rm myfork
+-main:
+This is the branch you want to push your changes to. In most cases, it would be "master". 
+If you have created a new branch and you want to push your changes to that
+branch instead of “master”, then use :
+* git push origin <your_newly_created_branch>:<name_of_the_remote_branch>
