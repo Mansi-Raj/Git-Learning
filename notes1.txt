@@ -58,14 +58,8 @@ We can use this command with following options:
 *PUSH:
 When we push the changes to the remote repository using below commands:
 * git push origin main
-OR
-* git push origin master
 -origin: 
 This is just an alias for your remote repository’s name, it could be anything. You can set it by using :
-* git remote rename origin myfork
-OR
-You can remove the alias by using :
-* git remote rm myfork
 -main:
 This is the branch you want to push your changes to. In most cases, it would be "master". 
 If you have created a new branch and you want to push your changes to that
