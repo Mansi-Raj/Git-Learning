@@ -1,0 +1,78 @@
+Workflow of Git:
+1. GitHub repo
+2. Clone 
+3. changes
+4. add
+5. commit
+6. push
+
+Git Branches:
+- master (production)
+- develop (staging/development)
+- feature branches for new features or bug fixes
+
+Branches command:
+-git branch: 
+ Lists all the local and remote branches in your repository.
+
+-git branch -M main:
+ Changes the name of the current branch to "main". This is useful if you want to rename your default branch from "master" to something else, like "main".
+
+-git checkout branch_name:
+ Switch to a different branch. If you are on branch A, git checkout B will switch to branch B.
+
+-git merge branch_name:
+ Merge the contents of another branch into the current one. This is used when you want to combine code from two different branches.
+
+-git checkout -b branch_name:
+ Create a new branch based off of another existing branch. This is handy if you want to base your work off of something that’s already in progress.
+
+-git branch -d branch_name:
+ Deletes an unmerged branch. You can’t delete a merged branch; instead, you must use git branch -D branch_name to remove it.
+
+Ways of merging code/branch:
+-WAY 1:
+git diff branch_name (to compare commits, branches, files and more)
+git log --oneline branch_name..master (to see what's in master that is not in branch_name)
+git merge branch_name (to merge 2 branches)
+
+-WAY 2
+create PR(Pull Request)
+Pull Request:
+A pull request is a proposal to merge a set of changes from one branch into another. 
+In a pull request, collaborators can review and discuss the proposed set of changes before 
+they integrate the changes into the main codebase. Pull requests display the differences, 
+or diffs, between the content in the source branch and the content in the target branch.
+
+Pull Cammand:
+`git pull origin <branch>`
+used to fetch and download content from a remote repo and immediately update the local repo to match that content.
+
+Resolving Merge Conflicts:
+-Merge Conflicts:
+When two people make conflicting modifications to the same part of a file, Git cannot automatically combine those changes. This leads to a conflict called a merge conflict. 
+
+-Resolve Merge Conflicts:
+An event that takes place when Git is unable to automatically resolve differences in code between two commits and we have manually resolve it.
+
+Undoing Changes :
+Case 1: staged changes Cammand
+git reset file_name:
+This command unstages a file while keeping it clean in your working directory. It’s like hitting the Reset button in SourceTree or GitX. 
+The changes remain in your working copy until you commit them again with `git add`.
+
+git reset:
+Without any options, it unstages all changes that have been committed but not yet added back to the repository. 
+This leaves the changes in your working directory intact so you can modify them further before committing. 
+The next time you commit, these changes will be included.
+
+Case 2: committed changes(for one commit)
+git reset HEAD~1
+
+case 3: committed changes(more than one)
+git reset <commit hash> 
+git reset --hard <commit hash>:
+
+
+Case 4: unstaged changes
+git checkout -- file_name
